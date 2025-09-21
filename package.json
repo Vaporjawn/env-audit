@@ -1,5 +1,5 @@
 {
-  "name": "env-audit",
+  "name": "envaudit-cli",
   "version": "1.0.0",
   "description": "🔍 Scan your codebase for environment variables and generate .env.example files automatically. Supports Next.js, Vite, Astro, SvelteKit, Docker, and more.",
   "keywords": [
