@@ -1,0 +1,39 @@
+{
+  "includePatterns": [
+    "src/**/*.{ts,js,tsx,jsx}",
+    "pages/**/*.{ts,js,tsx,jsx}",
+    "app/**/*.{ts,js,tsx,jsx}",
+    "components/**/*.{ts,js,tsx,jsx}",
+    "lib/**/*.{ts,js,tsx,jsx}",
+    "utils/**/*.{ts,js,tsx,jsx}",
+    "config/**/*.{ts,js}",
+    ".env*",
+    "docker-compose*.yml",
+    ".github/workflows/*.yml",
+    "scripts/**/*.sh"
+  ],
+  "excludePatterns": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.next/**",
+    "**/coverage/**",
+    "**/*.test.*",
+    "**/*.spec.*",
+    "**/__tests__/**",
+    "**/__mocks__/**"
+  ],
+  "publicPrefixes": [
+    "NEXT_PUBLIC_",
+    "VITE_",
+    "REACT_APP_",
+    "NUXT_PUBLIC_",
+    "PUBLIC_"
+  ],
+  "outputFormats": ["env", "md"],
+  "outputDir": "./docs",
+  "logLevel": "info",
+  "followSymlinks": false,
+  "maxFileSize": 1048576,
+  "excludeProviders": []
+}

@@ -1,0 +1,86 @@
+{
+  "compilerOptions": {
+    // Type Checking
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Modules
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    // Emit
+    "noEmit": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
+    // JavaScript Support
+    "allowJs": false,
+    "checkJs": false,
+
+    // Interop Constraints
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Language and Environment
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "useDefineForClassFields": true,
+
+    // Projects
+    "composite": false,
+    "disableReferencedProjectLoad": false,
+    "disableSolutionSearching": false,
+    "disableSourceOfProjectReferenceRedirect": false,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+
+    // Output Formatting
+    "noErrorTruncation": true,
+    "preserveWatchOutput": true,
+    "pretty": true,
+
+    // Completeness
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+
+    // Base URL and Path Mapping
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/cli/*": ["src/cli/*"],
+      "@/core/*": ["src/core/*"],
+      "@/providers/*": ["src/providers/*"],
+      "@/types": ["src/types.ts"],
+      "@/utils/*": ["src/utils/*"]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "**/*.js",
+    "**/*.cjs",
+    "**/*.mjs"
+  ],
+  "ts-node": {
+    "esm": true
+  }
+}
