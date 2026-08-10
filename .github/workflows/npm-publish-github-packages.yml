@@ -1,0 +1,35 @@
+# Publishes a GitHub-Packages-scoped copy of this package (@vaporjawn/envaudit-cli) to
+# npm.pkg.github.com so it shows up under https://github.com/Vaporjawn?tab=packages.
+# This repo has no existing GitHub-Packages workflow (only publish-to-npmjs.com via
+# release.yml), so this is purely additive and does not touch release.yml.
+#
+# Uses `npm install` rather than `npm ci`: package-lock.json is gitignored in this
+# repo, so there's no lockfile to install from (this is also why ci.yml and release.yml
+# have never completed a successful run — both use `npm ci`). --ignore-scripts skips
+# prepublishOnly (test/lint/typecheck) since that's already covered by ci.yml.
+name: Publish to GitHub Packages
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          registry-url: https://npm.pkg.github.com
+      - run: npm install
+      - run: npm run build
+      - name: Scope package name for GitHub Packages
+        run: npm pkg set name="@vaporjawn/envaudit-cli"
+      - run: npm publish --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
