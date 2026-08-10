@@ -220,9 +220,9 @@ tmp/
 .env-audit-cache/
 .env-audit.json
 
-# Package managers
+# Package managers (npm is this project's package manager — package-lock.json
+# is intentionally committed for reproducible installs, see npm ci in CI)
 yarn.lock
-package-lock.json
 pnpm-lock.yaml
 
 # Test outputs
